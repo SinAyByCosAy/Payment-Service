@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 public class StripePaymentGateway implements PaymentGateway{
     @Override
     public String generatePaymentLink(){
-
+        return "abc";
     }
 }
