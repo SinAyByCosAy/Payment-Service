@@ -1,5 +1,6 @@
 package dev.tanay.paymentservice.controllers;
 
+import dev.tanay.paymentservice.services.PaymentService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,9 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/payments")
 public class PaymentController {
-
+    private PaymentService paymentService;
+    public PaymentController paymentController(PaymentService paymentService){
+        this.paymentService = paymentService;
+    }
     @PostMapping("/")
     public String initiatePayment(@RequestBody){
-        return null;
+        return paymentService.initiatePayment();
     }
 }
