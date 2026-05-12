@@ -13,7 +13,7 @@ public class RazorpayPGConfig {
     @Value("${razorpay.secret.key}")
     private String razorpaySecretKey;
     @Bean
-    public RazorpayClient initializePaymentGateway() throws RazorpayException {
+    public RazorpayClient initializeRazorpayClient() throws RazorpayException {
         return new RazorpayClient(razorpayKeyId, razorpaySecretKey);
     }
 }
