@@ -16,6 +16,7 @@ public class PaymentController {
     }
     @PostMapping("/")
     public String initiatePayment(@RequestBody InitiatePaymentReqDto reqDto){
+        //we won't actually receive this data from the client, we'll get it from the Order service via orderId
         return paymentService.initiatePayment(reqDto.getEmail(), reqDto.getPhoneNo(), reqDto.getOrderId(), reqDto.getAmount());
     }
 }
