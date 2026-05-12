@@ -8,7 +8,7 @@ public class PaymentService {
     // then select the best available Payment Gateway
     // make a call to PG to get the link for the payment
     // return back the payment link
-    public String initiatePayment(){
+    public String initiatePayment(String email, String phoneNo, String orderId, Long amount){
         return null;
     }
 }
