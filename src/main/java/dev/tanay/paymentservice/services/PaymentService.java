@@ -17,6 +17,6 @@ public class PaymentService {
     }
     public String initiatePayment(String email, String phoneNo, String orderId, Long amount){
         PaymentGateway pg = paymentGatewayChooserStrategy.getBestPaymentGateway();
-        return null;
+        return pg.generatePaymentLink(email, phoneNo, orderId, amount);
     }
 }
