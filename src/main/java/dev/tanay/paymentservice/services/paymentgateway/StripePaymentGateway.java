@@ -18,7 +18,7 @@ public class StripePaymentGateway implements PaymentGateway {
         try {
             SessionCreateParams params = SessionCreateParams.builder()
                     .setMode(SessionCreateParams.Mode.PAYMENT)
-                    .setSuccessUrl("https://google.com/")
+                    .setSuccessUrl("https://google.com?session_id={CHECKOUT_SESSION_ID}")
                     .setCancelUrl("https://google.com/")
                     .setCustomerEmail(email)
                     .setClientReferenceId(orderId)
