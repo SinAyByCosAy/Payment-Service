@@ -43,7 +43,7 @@ public class StripePaymentGateway implements PaymentGateway {
             // Use the injected client instance to create the session
             Session session = stripeClient.checkout().sessions().create(params);
 
-            return session.toString();
+            return session.getUrl();
 
         } catch (Exception e) {
             System.out.println(e);

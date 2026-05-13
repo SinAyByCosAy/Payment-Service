@@ -39,7 +39,7 @@ public class RazorpayPaymentGateway implements PaymentGateway{
             paymentLinkRequest.put("callback_method", "get");
 
             PaymentLink payment = razorpayClient.paymentLink.create(paymentLinkRequest);
-            return payment.toString();
+            return payment.get("short_url").toString();
         }catch (Exception e){
             System.out.println(e);
             return "Oops! Something went wrong";
