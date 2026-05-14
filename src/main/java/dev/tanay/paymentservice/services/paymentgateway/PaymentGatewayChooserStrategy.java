@@ -15,7 +15,7 @@ public class PaymentGatewayChooserStrategy {
     }
     public PaymentGateway getBestPaymentGateway(){
         int randomInt = new Random().nextInt();
-        if(randomInt % 2 == 0) return stripePaymentGateway;
-        return razorpayPaymentGateway;
+//        if(randomInt % 2 == 0) return stripePaymentGateway;
+        return stripePaymentGateway;
     }
 }
